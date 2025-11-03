@@ -45,3 +45,19 @@ Die Logik ist in wenigen Zeilen JavaScript umgesetzt:
 
 ```js
 const pdfBase = "tex/TuttiFoodi/main.pdf#page=";
+
+```js
+const pageCount = 123; // total pages; 
+
+
+---
+
+## ⚡ Schnellstart / Quick Start
+
+1) **Repo klonen / Clone** oder Dateien herunterladen.  
+2) Öffne **`index.html`** direkt im Browser.  
+3) Klicke auf **“Random Recipe”**.
+
+> **Hinweis / Note:** Bei lokalen `file://` Pfaden funktioniert die PDF-Anzeige in modernen Browsern i. d. R. ohne Server. Falls dein Browser blockt: starte kurz einen simplen Server (z. B. `python -m http.server 8000`) und öffne `http://localhost:8000`.
+
+---
