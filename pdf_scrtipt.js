@@ -19,7 +19,11 @@ function pickRandomPage() {
         return 1;
     }
   // einfache Random-Page
-  return Math.floor(Math.random() * totalPages) + 1;
+  let index = 0;
+  while(index <= 5){
+    index = Math.floor(Math.random() * totalPages) + 1; 
+  }
+  return index;
 }
 
 function iframeShow(url) {
