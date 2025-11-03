@@ -14,64 +14,65 @@ const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
 
 function pickRandomPage() {
-  if (!Number.isInteger(totalPages) || totalPages < 1) {
-    alert("Config-Fehler: totalPages ist nicht korrekt gesetzt.");
-    return 1;
-  }
-  // einfache Random-Page 
+    if (!Number.isInteger(totalPages) || totalPages < 1) {
+        alert("Config-Fehler: totalPages ist nicht korrekt gesetzt.");
+        return 1;
+    }
+  // einfache Random-Page
   return Math.floor(Math.random() * totalPages) + 1;
 }
 
 function iframeShow(url) {
-  pdfFrame.src = url;
-  pdfFrame.style.display  = "block";
-  pdfCanvas.style.display = "none";
-  anotherBtn.style.display = "inline-block";
-  openTab.style.display    = "inline-block";
-  openTab.href             = url;
+    pdfFrame.src = url;
+    pdfFrame.style.display  = "block";
+    pdfCanvas.style.display = "none";
+    anotherBtn.style.display = "inline-block";
+    openTab.style.display    = "inline-block";
+    openTab.href             = url;
 }
 
 async function canvasShow(page) {
 
-  pdfFrame.style.display  = "none";
-  pdfCanvas.style.display = "block";
-  anotherBtn.style.display = "inline-block";
-  openTab.style.display    = "none"; // neuer Tab auf Mobil macht hier wenig Sinn
+    pdfFrame.style.display  = "none";
+    pdfCanvas.style.display = "block";
+    anotherBtn.style.display = "inline-block";
+    openTab.style.display    = "none"; // neuer Tab auf Mobil macht hier wenig Sinn
 
-  const pdf = await pdfjsLib.getDocument(pdfUrl).promise;
-  const p   = await pdf.getPage(page);
+    const pdf = await pdfjsLib.getDocument(pdfUrl).promise;
+    const p   = await pdf.getPage(page);
 
 
-  const desiredWidth = Math.min(window.innerWidth * 0.95, 800);
-  const viewport0    = p.getViewport({ scale: 1 });
-  const scale        = desiredWidth / viewport0.width;
-  const viewport     = p.getViewport({ scale });
+    const desiredWidth = Math.min(window.innerWidth * 0.95, 800);
+    const viewport0    = p.getViewport({ scale: 1 });
+    const pixelRatio = window.devicePixelRatio || 1;
+    const scale = (desiredWidth / viewport0.width) * pixelRatio * 1.2; // 1.2 = Vergrößerun
+    const viewport     = p.getViewport({ scale });
 
-  const ctx = pdfCanvas.getContext("2d");
-  pdfCanvas.width  = viewport.width;
-  pdfCanvas.height = viewport.height;
-  ctx.clearRect(0, 0, viewport.width, viewport.height);
+    const ctx = pdfCanvas.getContext("2d");
+    pdfCanvas.width  = viewport.width;
+    pdfCanvas.height = viewport.height;
+    ctx.clearRect(0, 0, viewport.width, viewport.height);
 
-  await p.render({ canvasContext: ctx, viewport }).promise;
+    await p.render({ canvasContext: ctx, viewport }).promise;
 }
 
 
 async function showRecipe() {
-  const page = pickRandomPage();
+    const page = pickRandomPage();
 
-  if (isMobile) {
-    // Mobil
-    try {
-      await canvasShow(page);
-    } catch (e) {
-      console.error(e);
-      alert("Konnte die Seite mobil nicht rendern.");
+    if (isMobile) {
+        // Mobil
+        try {
+        await canvasShow(page);
+        } catch (e) {
+        console.error(e);
+        alert("Konnte die Seite mobil nicht rendern.");
+        }
+    } else {
+        //  Desktop: 
+        const url = `${pdfUrl}#page=${page}`;
+        iframeShow(url);
     }
-  } else {
-    //  Desktop: 
-    const url = `${pdfUrl}#page=${page}`;
-    iframeShow(url);
-  }
 }
 
 // ====== Events ======
