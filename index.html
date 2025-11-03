@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Tutti Foodie - Random Recipe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Tutti Foodie — Random Recipe</h1>
+
+    <p id="instruction" class="muted">Press the button to generate a recipe PDF from our collection.</p>
+
+    <div class="controls">
+        <button id="generateBtn" aria-label="Generate a random recipe">Generate Recipe</button>
+        <button id="anotherBtn" style="display:none" aria-label="Generate another recipe">Another one</button>
+        <a id="openTab" href="#" target="_blank" style="display:none; align-self:center;">Open in new tab</a>
+    </div>
+
+    <div id="viewer" aria-live="polite">
+        <iframe id="pdfFrame" title="Recipe PDF viewer"></iframe>
+    </div>
+
+    <script src="pdf_scrtipt.js"></script>
+</body>
+</html>

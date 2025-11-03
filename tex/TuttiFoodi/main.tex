@@ -1,0 +1,218 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[a4paper,left=2.5cm,right=2.5cm,top=2.5cm,bottom=3cm,bindingoffset=5mm]{geometry}
+\usepackage{setspace}%für zeilenabstand
+\usepackage{graphicx}
+\usepackage{times} %schriftart einstellen
+\usepackage[english, ngerman]{babel}
+\usepackage[T1]{fontenc}% wichtig für Trennung von Wörtern mit Umlauten
+\usepackage{microtype}% verbesserter Randausgleich
+\pagenumbering{arabic}
+\usepackage{tabularx}
+\usepackage{booktabs}
+%\usepackage{color}
+\usepackage{caption}
+\usepackage{listliketab}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage[labelfont={bf,sf},font={small},labelsep=space]{caption}
+\usepackage{subcaption}
+\captionsetup{singlelinecheck=false}
+\usepackage{etoolbox} % for \patchcmd
+\usepackage{upgreek}
+\usepackage{textgreek}
+\usepackage{amsmath}
+\usepackage{acronym}
+\usepackage{csquotes}
+\usepackage{siunitx}
+\usepackage{pdfpages}
+\usepackage{longtable}
+\usepackage[version=4]{mhchem}
+\usepackage{wallpaper}
+%\usepackage[backend=biber, style=alphabetic, sorting=ynt]{biblatex}
+\patchcmd{\tableofcontents}{\contentsname}{\MakeUppercase\contentsname}{}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+\newcommand{\grade}[1]{%
+\begin{tikzpicture}
+\clip (1em-.3em,-.3em) rectangle (5em +.5em ,.3em);
+\begin{scope}
+\clip (1em-.3em,-.3em) rectangle (#1em +.5em ,.3em);
+\foreach \x in {1,2,...,5}{
+ \path[fill=black] (\x em,0) circle (.25em);
+}
+\end{scope}
+\foreach \x in {1,2,...,5}{
+ \draw (\x em,0) circle (.25em);
+}
+\end{tikzpicture}%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\ThisCenterWallPaper{1.01}{tuttifoodi57.png}
+\title{}
+\author{}
+\date{}
+\maketitle
+%\blindtext
+\pagebreak
+\begin{center}
+\vspace*{7cm}
+\textsc{\Huge - eine Rezeptsammlung zum teilen -} \\[5cm]
+\textsc{\Large von Lena Stowasser}\\[5cm]
+%\textsc{\Large in zusammenarbeit mit und rezepten von} \\[0.5cm] 
+%\textsc{\Large{Sören Krumm und}} \\[0.5cm] 
+%\textsc{\Large{Daniela Masarczyk}}
+\vfill
+\end{center}
+\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\newcommand{\MSonehalfspacing}{%
+  \setstretch{1.22}%  default 1.44
+  \ifcase \@ptsize \relax % 10pt
+    \setstretch {1.448}%
+  \or % 12pt
+    \setstretch {1.902}%
+  \fi
+}%1,433
+\makeatother
+\MSonehalfspacing
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+\section{NUDELGERICHTE}
+\input{nudelgerichte/eiernudeln/eiernudeln}
+\input{nudelgerichte/thunfischnudeln/thunfischnudeln}
+\input{nudelgerichte/shrimpsnudeln/shrimpsnudeln}
+\input{nudelgerichte/tomaten schinken olivensauce/tomaten schinken sauce mit oliven}
+\input{nudelgerichte/nudeln mit spinat und räucherlachs/nudeln mit spinat und räucherlachs}
+\input{nudelgerichte/jägerspätzle/jägerspätzle}
+\input{nudelgerichte/spaghetti bolognese/spaghetti bolognese}
+\input{nudelgerichte/all arrabiata/all arrabiata}
+\input{nudelgerichte/Spaghetti aglio e olio/Spaghetti aglio e olio}
+\input{nudelgerichte/tofu tomaten sahne nudeln/tofunudeln}
+\input{nudelgerichte/nudeln mit würstchensoße/nudeln mit würstchensoße}
+\input{nudelgerichte/pasta a la genovese/pasta a la genovese}
+\input{nudelgerichte/nudeln mit ossi tomatensoße/nudeln mit ossi-tomatensoße}
+\input{nudelgerichte/feta ofennudeln/feta ofennudeln}
+\input{nudelgerichte/nudeln mit pancetta-tomatensoße/nudeln mit pancetta tomatensoße}
+%\input{nudelgerichte/pasta genovese/pasta genovese}
+%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+\section{REISGERICHTE}
+\input{reisgerichte/brokoli senf hühnchen/brokoli senf hühnchen}
+\input{reisgerichte/cheeseburgerpfanne/cheeseburgerpfanne}
+\input{reisgerichte/gemüsecurry/gemüsecurry}
+\input{reisgerichte/pikante klops pilzpfanne/pikante klops pilzpfanne}
+\input{reisgerichte/walnuss-zucchini risotto/walnuss zucchini risotto}
+\input{reisgerichte/nasi goreng/nasi goreng}
+\input{reisgerichte/sushi/sushi}
+\input{reisgerichte/butterchicken/butterchicken}
+\input{reisgerichte/hackfleischreispfanne/hackfleisch reis pfanne}
+\input{reisgerichte/kimchi fried rice/kimchi-reis-pfanne}
+\input{reisgerichte/golden curry mit gemüse und hühnchen/golden curry mit gemüse und hühnchen}
+\input{reisgerichte/frikasse/frikasse}
+\input{reisgerichte/königsberger klopse/königsberger klopse}
+%\input{reisgerichte/bifteki mit tomatentreis/bifteki mit tomatenreis}
+%\input{reisgerichte/asiatischer bratreis/asiatischer bratreis}
+%\input{reisgerichte/chop suey/chop suey}
+%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+\section{KARTOFFELGERICHTE}
+\input{kartoffelgerichte/sauerkraut mit speck und pellkartoffeln/sauerkraut mit speck und pellkartoffeln}
+\input{kartoffelgerichte/schnitzel mit holondaise/schnitzel mit holondaise}
+\input{kartoffelgerichte/kumpir/kumpir}
+\input{kartoffelgerichte/bauernfrühstück/bauernfrühstück}
+\input{kartoffelgerichte/fischstäbchen mit erbsenkartoffelbrei/fischstäbchen}
+\input{kartoffelgerichte/grünkohl mit kartofflen oder semmelködel/grünkohl mit kartoffeln}
+\input{kartoffelgerichte/kartoffelgemüseauflauf mit holondaise/kartoffelgemüseauflauf mit holondaise}
+\input{kartoffelgerichte/poutine/poutine}
+\input{kartoffelgerichte/rouladen mit kartoffelklößen/rouladen mit klößen}
+\input{kartoffelgerichte/gemüsepfanne mit gnocchi/gemüsepfanne mit gnocchi}
+\input{kartoffelgerichte/kartoffelpuffer/kartoffelpuffer}
+%\input{kartoffelgerichte/spinat mit ofenkartoffeln/spinat mit ofenkartoffeln}
+%\input{kartoffelgerichte/steak mit tsatsiki und ofenkartoffeln/steak mit tsatsiki und ofenkartoffeln}
+%\input{kartoffelgerichte/gefüllte paprika/gefüllte paprika}
+%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+\section{EIERGERICHTE}
+\input{eiergerichte/shakshuka/shakshuka}
+\input{eiergerichte/omlette mit salat/omlette mit salat}
+\input{eiergerichte/senfei mit salzkartoffeln/senfei mit kartoffeln}
+\input{eiergerichte/sabich/sabich}
+%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+\section{OFENGERICHTE}
+\input{gerichte aus dem ofen/auberginenauflauf/auberginenauflauf}
+\input{gerichte aus dem ofen/spinat räucherlachs lasagne/spinat räucherlachs lasagne}
+\input{gerichte aus dem ofen/ossi pizza/ossi pizza}
+%\input{gerichte aus dem ofen/überbackene brötchen mit serano und camenbert/überbackene brötchen mit serano und camenbert}
+\input{gerichte aus dem ofen/tortelliniauflauf/tortelliniauflauf}
+\input{gerichte aus dem ofen/zucchini schafskäse pizza/zucchini schafskäse pizza}
+\input{gerichte aus dem ofen/überbackene brötchen mit serano und camenbert/überbackene brötchen mit serano und camenbert}
+\input{gerichte aus dem ofen/enchiladas/enchiladas}
+\input{gerichte aus dem ofen/flammkuchen/flammkuchen}
+%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+\section{TEIG- UND BROTGERICHTE}
+\input{brotgerichte/wraps/wraps}
+\input{brotgerichte/Hot dogs/hot dogs}
+\input{brotgerichte/veggi burger mit kartoffelwedges/veggiburger}
+\input{brotgerichte/sommerrollen/sommerrollen}
+\input{brotgerichte/haloumiburger/haloumiburger}
+%\input{brotgerichte/tacos/tacos}
+%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+\section{SUPPEN UND EINTÖPFE}
+\input{suppen und eintöpfe/bohneneintopf/bohneneintopf}
+\input{suppen und eintöpfe/kürbis kartoffel ragout/kürbis kartoffel ragout}
+\input{suppen und eintöpfe/chili con carne/chili con carne}
+\input{suppen und eintöpfe/kürbissuppe mit gorgonzola/kürbissuppe mit gorgonzola}
+\input{suppen und eintöpfe/bigos/bigos}
+\input{suppen und eintöpfe/orientalische linsensuppe/orientalische linsensuppe}
+\input{suppen und eintöpfe/bohneneintopf à la bud spencer und terence hill/bohneneintopf à la bud spencer und terence hill}
+\input{suppen und eintöpfe/kichererbseneintopf/kichererbseneintopf}
+\input{suppen und eintöpfe/gulasch/gulasch}
+\input{suppen und eintöpfe/soljanka/soljanka}
+\input{suppen und eintöpfe/hühnersuppe/hühnersuppe}
+\input{suppen und eintöpfe/käselauchsuppe mit knoblauchbagutte/käselauchsuppe mit knoblauchbaguette}
+%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+\section{SALATE}
+\input{salate/rucolasalat/rucolasalat}
+\input{salate/tomatensalat/tomatensalat}
+\input{salate/mediteraner nudelsalat/mediteraner nudelsalat}
+\input{salate/brotsalat/brotsalat}
+\input{salate/möhrensalat/möhrensalat}
+\input{salate/gurkensalat/gurkensalat}
+\input{salate/glasnudelsalat/glasnudelsalat}
+\input{salate/bulgursalat/bulgursalat}
+%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+\section{HERZHAFTE BACKWAREN UND KALTE SNACKER}
+\input{herzhafte backwaren/körnerbrot}
+%\input{herzhafte backwaren/sauerteigbrot}
+\input{kalte snacker/antipasti/antipasti}
+\input{kalte snacker/spinat blätterteig taschen/spinat blätterteig taschen}
+\input{kalte snacker/bruschetta/bruschetta}
+%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+\section{SÜßSPEISEN UND KUCHEN}
+\input{süßspeisen und kuchen/obstkuchen/obstkuchen}
+\input{süßspeisen und kuchen/bananenbrot/bananenbrot}
+\input{süßspeisen und kuchen/pfannkuchen/pfannkuchen}
+\input{süßspeisen und kuchen/waffeln/waffeln}
+\input{süßspeisen und kuchen/möhrenkuchen/möhrenkuchen}
+\input{süßspeisen und kuchen/brownies/brownies}
+\input{süßspeisen und kuchen/zupfkuchen/zupfkuchen}
+\input{süßspeisen und kuchen/käsekuchen/käsekkuchen}
+\input{süßspeisen und kuchen/früchtebrot/früchtebrot}
+\input{süßspeisen und kuchen/zwetschgenkuchen/zwetschgenkuchen}
+\input{süßspeisen und kuchen/bienenstich/bienenstich}
+\input{süßspeisen und kuchen/bananewalnussmuffind/bananenmuffins}
+%\input{süßspeisen und kuchen/creme brulee/creme brulee}
+\end{document}
