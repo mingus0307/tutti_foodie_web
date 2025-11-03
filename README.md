@@ -49,7 +49,7 @@ const pdfBase = "tex/TuttiFoodi/main.pdf#page=";
 ```js
 const pageCount = 123; // total pages;
 
-
+```
 ---
 
 ## ⚡ Schnellstart / Quick Start
