@@ -84,6 +84,7 @@ const file = pdfs[Math.floor(Math.random() * pdfs.length)];
 const page = Math.floor(Math.random() * 50) + 1; // Beispiel: 50 Seiten
 const url = `${file}#page=${page}`;
 window.open(url, "_blank");
+```
 
 ---
 
