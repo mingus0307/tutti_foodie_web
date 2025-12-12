@@ -10,7 +10,7 @@ Mit einem Klick öffnet sich **eine zufällige Seite** aus einer Rezeptsammlung 
 
 ---
 
-##  Inhaltsverzeichnis / Table of Contents
+##  Inhaltsverzeichnis / Table of Contents 
 - [ Features](#-features)
 - [ Funktionsweise / How It Works](#-funktionsweise--how-it-works)
 - [ Eigene Sammlung verwenden / Customize](#-eigene-sammlung-verwenden--customize)
