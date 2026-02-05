@@ -22,13 +22,13 @@ Mit einem Klick öffnet sich **eine zufällige Seite** aus einer Rezeptsammlung 
 
 ##  Features
 
-🇩🇪 **Deutsch**
+**Deutsch**
 -  Wählt zufällig ein Rezept aus einer mehrseitigen PDF-Datei  
 -  Öffnet das Rezept direkt im Browser oder in einem neuen Tab  
 -  Einfach anpassbar für eigene Rezeptsammlungen  
 -  Kein Server nötig – läuft komplett **lokal im Browser**
 
-🇬🇧 **English**
+ **English**
 -  Randomly selects a recipe from a multi-page PDF  
 -  Opens the recipe directly in your browser or a new tab  
 -  Easily customizable for your own recipe collection  
@@ -38,8 +38,8 @@ Mit einem Klick öffnet sich **eine zufällige Seite** aus einer Rezeptsammlung 
 
 ##  Funktionsweise / How It Works
 
-🇩🇪 Das Tool nutzt den eingebauten PDF-Viewer des Browsers.  
-🇬🇧 The tool uses your browser’s built-in PDF viewer.
+Das Tool nutzt den eingebauten PDF-Viewer des Browsers.  
+The tool uses your browser’s built-in PDF viewer.
 
 Die Logik ist in wenigen Zeilen JavaScript umgesetzt:
 
@@ -62,10 +62,10 @@ const pageCount = 123; // total pages;
 
 ---
 
-## ❓ FAQ
+## FAQ
 
 **Q:** Brauche ich einen Server oder Build-Schritt?  
-**A:** Nein. Das ist reines HTML/JS. Öffne einfach `index.html` im Browser oder nutze GitHub Pages.
+**A:** Nein. Das ist reines HTML/JS. Öffne einfach `index.html` im Browser oder nutze GitHub Pages. Mittlerweile ist ein rudimentäres Server setup integriert
 
 ---
 
@@ -89,7 +89,7 @@ window.open(url, "_blank");
 ---
 
 So ist der FAQ-Teil **Markdown-konform**, mit sauberem Codeblock und automatischer Syntax-Hervorhebung auf GitHub.
-### 🇩🇪 Kurzfassung zur Personalisierung (nur Markdown nötig)
+###  Kurzfassung zur Personalisierung (nur Markdown nötig)
 
 - **PDF ersetzen:** Datei ablegen (z. B. `my_recipes.pdf`), `recipes` anpassen.  
 - **Seitenzahl setzen:** `pageCount` auf die echte Seitenanzahl stellen oder `pdf_script.js` nutzen.  
@@ -100,7 +100,7 @@ So ist der FAQ-Teil **Markdown-konform**, mit sauberem Codeblock und automatisch
 
 ---
 
-### 🇬🇧 Personalization TL;DR (Markdown only)
+###  Personalization TL;DR (Markdown only)
 
 - **Replace PDF:** drop your file (e.g. `my_recipes.pdf`), set `recipes`.  
 - **Set page count:** adjust `pageCount` to your PDF or use `PDF.js`.  
