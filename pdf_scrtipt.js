@@ -64,19 +64,13 @@ async function canvasShow(page) {
 async function showRecipe() {
     const page = pickRandomPage();
 
-    if (isMobile) {
-        // Mobil
-        try {
+     try {
         await canvasShow(page);
-        } catch (e) {
+    } catch (e) {
         console.error(e);
-        alert("Konnte die Seite mobil nicht rendern.");
-        }
-    } else {
-        //  Desktop: 
-        const url = `${pdfUrl}#page=${page}`;
-        iframeShow(url);
+        alert("Konnte die Seite nicht rendern.");
     }
+
 }
 
 // ====== Events ======
